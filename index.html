@@ -136,7 +136,7 @@
   .note { font-family: Arial, sans-serif; font-size: 12px; color: var(--muted); margin-top: 8px; }
 
   /* SCENARIO CARDS */
-  .scenarios { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; margin-top: 18px; }
+  .scenarios { display: grid; grid-template-columns: repeat(2, 1fr); gap: 18px; margin-top: 18px; }
   .scenario {
     background: var(--panel); border: 1px solid var(--line); border-radius: 8px; padding: 22px;
   }
@@ -154,11 +154,101 @@
   .check-card ul { margin: 0; padding-left: 18px; font-family: Arial, sans-serif; font-size: 13px; color: #c5bda8; }
   .check-card li { margin-bottom: 7px; }
 
+  /* PHASED PLAN R$2M */
+  .plan-banner {
+    background: linear-gradient(135deg, var(--panel-2), var(--panel));
+    border: 1px solid var(--gold);
+    border-radius: 10px;
+    padding: 24px 28px;
+    margin-bottom: 30px;
+  }
+  .plan-banner p { margin: 0; color: #e3dcc9; font-size: 15.5px; }
+  .plan-banner strong { color: var(--gold-light); }
+
+  .fase-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 22px; }
+  .fase-card {
+    background: var(--panel); border: 1px solid var(--line); border-radius: 10px; overflow: hidden;
+  }
+  .fase-card.f1 { border-color: var(--gold); }
+  .fase-card-head {
+    padding: 16px 22px; font-family: Arial, sans-serif;
+    display: flex; justify-content: space-between; align-items: center;
+  }
+  .fase-card.f1 .fase-card-head { background: rgba(201,163,95,0.12); }
+  .fase-card.f2 .fase-card-head { background: var(--panel-2); }
+  .fase-card-head .label { font-size: 11px; text-transform: uppercase; letter-spacing: 1.5px; color: var(--muted); }
+  .fase-card-head .when { font-size: 11px; color: var(--muted); }
+  .fase-card-head h3 { margin: 4px 0 0; }
+  .fase-card-body { padding: 18px 22px 22px; }
+  .fase-card-body ul { margin: 0 0 16px; padding-left: 18px; font-size: 13.5px; color: #c5bda8; font-family: Arial, sans-serif; }
+  .fase-card-body li { margin-bottom: 7px; }
+  .fase-card-body li.cut { color: #8c8470; text-decoration: line-through; }
+  .fase-total {
+    font-family: Arial, sans-serif; display: flex; justify-content: space-between;
+    align-items: baseline; padding-top: 14px; border-top: 1px solid var(--line);
+  }
+  .fase-total .lbl { font-size: 12px; color: var(--muted); text-transform: uppercase; letter-spacing: 1px; }
+  .fase-total .val { font-size: 22px; color: var(--gold-light); }
+
+  .lever-list { display: grid; gap: 14px; margin-top: 18px; }
+  .lever {
+    display: grid; grid-template-columns: 36px 1fr; gap: 14px;
+    background: var(--panel); border: 1px solid var(--line); border-radius: 8px; padding: 16px 20px;
+  }
+  .lever .num-badge {
+    width: 32px; height: 32px; border-radius: 50%; background: var(--gold); color: var(--bg);
+    display: flex; align-items: center; justify-content: center; font-family: Arial, sans-serif;
+    font-weight: bold; font-size: 14px;
+  }
+  .lever h4 { margin: 0 0 4px; color: var(--gold-light); font-weight: normal; font-size: 16px; font-family: Georgia, serif; }
+  .lever p { margin: 0; font-size: 13.5px; font-family: Arial, sans-serif; color: #c5bda8; }
+
+  /* BUILD VS FRANCHISE */
+  .vs-grid { display: grid; grid-template-columns: 1fr auto 1fr; gap: 0; align-items: stretch; margin-top: 18px; }
+  .vs-col { background: var(--panel); border: 1px solid var(--line); padding: 24px 26px; }
+  .vs-col.own { border-radius: 10px 0 0 10px; border-right: none; }
+  .vs-col.franchise { border-radius: 0 10px 10px 0; border-left: none; }
+  .vs-divider {
+    width: 44px; display: flex; align-items: center; justify-content: center;
+    background: var(--panel-2); border-top: 1px solid var(--gold); border-bottom: 1px solid var(--gold);
+    font-family: Arial, sans-serif; font-size: 11px; color: var(--gold); font-weight: bold; letter-spacing: 1px;
+  }
+  .vs-col h3 { margin-top: 0; }
+  .vs-col.own h3 { color: var(--gold-light); }
+  .vs-col.franchise h3 { color: var(--muted); }
+  .vs-col ul { margin: 0; padding-left: 18px; font-family: Arial, sans-serif; font-size: 13.5px; color: #c5bda8; }
+  .vs-col li { margin-bottom: 9px; }
+  .vs-col li strong { color: var(--cream); }
+
+  .reasons-grid { display: grid; gap: 14px; margin-top: 20px; }
+  .reason {
+    display: grid; grid-template-columns: 28px 1fr; gap: 14px;
+    padding: 14px 0; border-bottom: 1px solid var(--line);
+  }
+  .reason:last-child { border-bottom: none; }
+  .reason .icon { font-size: 18px; text-align: center; padding-top: 2px; }
+  .reason h4 { margin: 0 0 4px; color: var(--gold-light); font-weight: normal; font-size: 15.5px; font-family: Georgia, serif; }
+  .reason p { margin: 0; font-size: 13.5px; font-family: Arial, sans-serif; color: #c5bda8; }
+
+  .verdict-box {
+    background: var(--panel-2); border: 1px solid var(--gold); border-radius: 10px;
+    padding: 22px 26px; margin-top: 24px;
+  }
+  .verdict-box .v-label { font-family: Arial, sans-serif; font-size: 11px; text-transform: uppercase; letter-spacing: 1.5px; color: var(--gold); margin-bottom: 8px; }
+  .verdict-box p { margin: 0; color: #e3dcc9; }
+
+  @media (max-width: 720px) {
+    .vs-grid { grid-template-columns: 1fr; }
+    .vs-divider { width: 100%; padding: 8px 0; }
+    .vs-col.own, .vs-col.franchise { border-radius: 10px; border: 1px solid var(--line); }
+  }
+
   footer { text-align: center; padding-top: 40px; border-top: 1px solid var(--line); color: var(--muted); font-family: Arial, sans-serif; font-size: 12px; }
 
   @media (max-width: 720px) {
     .scenarios { grid-template-columns: 1fr; }
     .checklist-grid { grid-template-columns: 1fr; }
+    .fase-grid { grid-template-columns: 1fr; }
     .meta-row { gap: 18px; flex-wrap: wrap; }
     h1 { font-size: 28px; }
   }
@@ -170,17 +260,88 @@
   <header class="hero">
     <div class="kicker">Plano de Implantação</div>
     <h1>Clube de Wellness Premium do Lala</h1>
-    <p class="subtitle">Roadmap de viabilidade, custos estimados e etapas para um espaço de 900m² entre Vila Madalena e Perdizes — academia + estética + massagem + coworking</p>
+    <p class="subtitle">Roadmap de viabilidade, custos estimados e etapas para um espaço de 900m² entre Vila Madalena e Perdizes — academia + estética + massagem + coworking, com plano de abertura faseado para investimento de R$ 2M</p>
     <div class="meta-row">
-      <div>Área<strong>900 m²</strong></div>
-      <div>Investimento estimado<strong>R$ 2,3M – 4,2M</strong></div>
-      <div>Prazo até abertura<strong>8–12 meses</strong></div>
+      <div>Área total<strong>900 m²</strong></div>
+      <div>Área operando Fase 1<strong>≈ 600 m²</strong></div>
+      <div>Investimento Fase 1<strong>≈ R$ 2M</strong></div>
+      <div>Prazo até abertura<strong>7–10 meses</strong></div>
     </div>
   </header>
 
   <div class="disclaimer">
     <strong>Sobre estes números:</strong> são estimativas construídas a partir de benchmarks de mercado (construção civil para uso comercial, equipamentos fitness profissionais e referências do setor de academias boutique no Brasil). Não existe uma fonte única e auditável para "custo de academia de luxo por m²" — o mercado não publica isso de forma confiável. Use como ponto de partida para orçar com fornecedores reais (2–3 cotações por categoria) antes de comprometer capital.
   </div>
+
+  <!-- PRÓPRIA VS FRANQUIA -->
+  <section>
+    <div class="section-label">Decisão Estratégica Inicial</div>
+    <h2>Marca própria ou franquia?</h2>
+    <p>Com o terreno já em mãos, essa é a primeira bifurcação real do projeto. Uma franquia compra know-how, marca testada e processo pronto — mas custa parte da margem e, principalmente, parte do controle sobre um ativo que você já possui de graça: o imóvel. Veja o argumento para cada lado.</p>
+
+    <div class="vs-grid">
+      <div class="vs-col own">
+        <h3>Marca Própria</h3>
+        <ul>
+          <li><strong>100% da margem fica com você</strong> — sem royalties (tipicamente 5–10% do faturamento) nem taxa de propaganda</li>
+          <li><strong>Liberdade total de posicionamento</strong> — mix de academia + spa + coworking é um conceito incomum; franquias têm formato fechado, raramente aceitam customização desse porte</li>
+          <li><strong>O ativo principal já é seu</strong> — o terreno. Numa franquia, você paga para usar uma marca em cima de um imóvel que já te pertence; o maior risco (ponto comercial) você já resolveu sozinho</li>
+          <li><strong>Constrói valor de marca próprio</strong> — em caso de venda futura ou expansão, o ativo intangível (marca, base de clientes, reputação) é seu, não de terceiros</li>
+          <li>Maior exposição a erro de operação — você banca o aprendizado</li>
+          <li>Validação de demanda recai inteiramente sobre você (pesquisa, benchmarking, teste)</li>
+        </ul>
+      </div>
+      <div class="vs-divider">VS</div>
+      <div class="vs-col franchise">
+        <h3>Franquia</h3>
+        <ul>
+          <li>Modelo de negócio validado — menor curva de aprendizado operacional</li>
+          <li>Suporte em gestão, treinamento de equipe e, às vezes, em volume de compra de equipamentos</li>
+          <li>Marca já reconhecida pode acelerar captação de membros no início</li>
+          <li><strong>Royalties e taxa de propaganda recorrentes</strong> — normalmente 5–10% do faturamento bruto, para sempre</li>
+          <li><strong>Formato engessado</strong> — franqueadoras de academia raramente têm modelo com spa + estética + coworking integrados; você adaptaria o seu conceito ao padrão deles, não o contrário</li>
+          <li>Contrato de franquia tem cláusulas de exclusividade territorial, padrão visual obrigatório e restrições de venda do negócio</li>
+        </ul>
+      </div>
+    </div>
+
+    <h3 style="margin: 32px 0 4px;">Por que marca própria, especificamente no seu caso</h3>
+    <div class="reasons-grid">
+      <div class="reason">
+        <div class="icon">🏗️</div>
+        <div>
+          <h4>O terreno já elimina o maior risco do negócio</h4>
+          <p>Na maioria dos casos, ponto comercial é o fator que mais decide o sucesso de uma academia. Você já resolveu isso — numa região nobre, sem custo de aquisição ou aluguel. Pagar franquia é pagar por algo que normalmente compensa justamente a falta de um bom ponto.</p>
+        </div>
+      </div>
+      <div class="reason">
+        <div class="icon">🎯</div>
+        <div>
+          <h4>Seu conceito é um híbrido que franquia nenhuma replica bem</h4>
+          <p>Academia + estética + massagem + coworking sob o mesmo teto não é um formato padrão de franquia fitness no Brasil. As redes existentes (Smart Fit, Bio Ritmo, Bluefit) têm modelo de academia pura; encaixar seu conceito nisso significaria abrir mão exatamente do que torna o projeto diferenciado.</p>
+        </div>
+      </div>
+      <div class="reason">
+        <div class="icon">💰</div>
+        <div>
+          <h4>Royalty é custo permanente, não custo de implantação</h4>
+          <p>5–10% do faturamento bruto, todo mês, para sempre — isso pesa mais ao longo de 10 anos do que o esforço inicial de construir marca própria. Num negócio de ticket alto e baixo volume, como o seu, essa margem é especialmente preciosa.</p>
+        </div>
+      </div>
+      <div class="reason">
+        <div class="icon">📈</div>
+        <div>
+          <h4>Marca própria é um ativo que se valoriza com você</h4>
+          <p>Se o clube performar bem, o valor de marca, a base de membros e a reputação local pertencem 100% ao negócio — e a você. Numa franquia, parte desse valor está atrelado à marca do franqueador, não ao seu ponto específico.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="verdict-box">
+      <div class="v-label">Quando franquia faria sentido</div>
+      <p>Se a prioridade fosse abrir rápido, com a menor curva de aprendizado possível, e o conceito fosse uma academia tradicional (sem o mix de spa/estética/coworking) — aí o suporte operacional de uma rede testada compensaria o custo do royalty. Não é o seu caso: o diferencial do projeto está exatamente na customização que uma franquia não permite.</p>
+    </div>
+  </section>
 
   <!-- ROADMAP -->
   <section>
@@ -196,8 +357,10 @@
             <span class="phase-time">Mês 1–2</span>
           </div>
           <ul>
+            <li><strong>Definir: marca própria ou franquia</strong> (ver argumentação na seção anterior — decisão estruturante para tudo que vem depois)</li>
             <li>Definir posicionamento e ticket médio alvo (ex: R$ 1.500–3.500/mês)</li>
             <li>Pesquisa de demanda e benchmarking de concorrentes na região (SETT, Bio Ritmo Black, estúdios boutique)</li>
+            <li><strong>Pesquisa preliminar de preços de equipamentos</strong> (cotação inicial com Technogym, Life Fitness, Matrix, Wellness — para validar o CAPEX antes de fechar projeto)</li>
             <li>Montar planilha de viabilidade: CAPEX, custo fixo, ponto de equilíbrio</li>
             <li>Definir mix de receita (academia / estética / massagem / coworking — próprio ou parceria)</li>
           </ul>
@@ -271,7 +434,8 @@
             <span class="phase-time">Mês 6–9 (paralelo à obra)</span>
           </div>
           <ul>
-            <li>Cotação com fabricantes premium: Technogym, Life Fitness, Matrix, Wellness</li>
+            <li>Cotação formal (3+ fornecedores) com fabricantes premium: Technogym, Life Fitness, Matrix, Wellness</li>
+            <li>Comparar tabela de preços, condições de pagamento, garantia e prazo de manutenção entre fornecedores</li>
             <li>Equipamentos de musculação, cardio, pesos livres, estúdios (bike/funcional)</li>
             <li>Equipamentos de estética e spa (camas de massagem, aparelhos estéticos)</li>
             <li>Mobiliário de coworking, recepção, lounge</li>
@@ -376,10 +540,20 @@
   <!-- SCENARIOS -->
   <section>
     <div class="section-label">Cenários de Investimento</div>
-    <h2>Total estimado por nível de padrão</h2>
+    <h2>Comparativo — abertura completa x abertura faseada</h2>
     <div class="scenarios">
+      <div class="scenario mid">
+        <div class="scenario-name">Fase 1 — Plano R$2M (recomendado p/ este capital)</div>
+        <div class="scenario-value">R$ 2,0M</div>
+        <ul>
+          <li><span>Área operando</span><span>≈ 600 m²</span></li>
+          <li><span>Reforma</span><span>R$ 875k</span></li>
+          <li><span>Equipamentos</span><span>R$ 725k</span></li>
+          <li><span>Licenc./giro/marketing</span><span>R$ 400k</span></li>
+        </ul>
+      </div>
       <div class="scenario">
-        <div class="scenario-name">Conservador</div>
+        <div class="scenario-name">Conservador (900m² completo)</div>
         <div class="scenario-value">R$ 2,3M</div>
         <ul>
           <li><span>Reforma</span><span>R$ 1,25M</span></li>
@@ -387,8 +561,8 @@
           <li><span>Licenc./pré-op.</span><span>R$ 385k</span></li>
         </ul>
       </div>
-      <div class="scenario mid">
-        <div class="scenario-name">Intermediário (recomendado)</div>
+      <div class="scenario">
+        <div class="scenario-name">Intermediário (900m² completo)</div>
         <div class="scenario-value">R$ 3,2M</div>
         <ul>
           <li><span>Reforma</span><span>R$ 1,7M</span></li>
@@ -397,7 +571,7 @@
         </ul>
       </div>
       <div class="scenario">
-        <div class="scenario-name">Alto Padrão</div>
+        <div class="scenario-name">Alto Padrão (900m² completo)</div>
         <div class="scenario-value">R$ 4,2M</div>
         <ul>
           <li><span>Reforma</span><span>R$ 2,4M</span></li>
@@ -407,6 +581,102 @@
       </div>
     </div>
     <p class="note" style="margin-top:18px;">Como o terreno já é seu, este investimento é só CAPEX de implantação (sem custo de aquisição/aluguel de imóvel) — isso melhora muito o retorno comparado a um concorrente que precisa alugar 900m² numa região nobre.</p>
+  </section>
+
+  <!-- PLANO R$2M -->
+  <section>
+    <div class="section-label">Cenário Real de Capital</div>
+    <h2>Como abrir com R$ 2 milhões</h2>
+
+    <div class="plan-banner">
+      <p>Com R$ 2M, o cenário "intermediário" (R$ 3,2M) não fecha tentando entregar os 900m² completos em padrão alto de uma vez. A saída mais segura é <strong>abrir em duas fases</strong>: operar a academia em ~600m² com padrão alto desde o dia 1, e construir spa/estética + coworking na Fase 2, financiados pelo caixa que a operação já estiver gerando.</p>
+    </div>
+
+    <h3 style="margin-bottom: 14px;">As 3 alavancas, em ordem de impacto</h3>
+    <div class="lever-list">
+      <div class="lever">
+        <div class="num-badge">1</div>
+        <div>
+          <h4>Reduzir a área operacional inicial</h4>
+          <p>Abrir com ~600m² (academia + recepção/lounge + vestiários) em vez dos 900m² completos. A alavanca de maior impacto no CAPEX — reforma e equipamento escalam direto com metragem.</p>
+        </div>
+      </div>
+      <div class="lever">
+        <div class="num-badge">2</div>
+        <div>
+          <h4>Rebalancear equipamento vs. acabamento</h4>
+          <p>O luxo percebido vem mais do acabamento do espaço (piso, espelho, iluminação, recepção) do que da marca do equipamento. Mix de marcas: topo de linha nas peças visíveis, nacionais boas no resto.</p>
+        </div>
+      </div>
+      <div class="lever">
+        <div class="num-badge">3</div>
+        <div>
+          <h4>Tirar uma vertical do escopo inicial</h4>
+          <p>Spa/estética completo é o que tem menor sinergia operacional imediata com a academia — fica para a Fase 2. Quem assina academia de luxo compra treino + experiência primeiro, não mesa de coworking.</p>
+        </div>
+      </div>
+    </div>
+
+    <h3 style="margin: 32px 0 14px;">Abertura em duas fases</h3>
+    <div class="fase-grid">
+      <div class="fase-card f1">
+        <div class="fase-card-head">
+          <div>
+            <span class="label">Fase 1 — Abertura</span>
+            <h3>Academia + Lounge</h3>
+          </div>
+          <span class="when">Mês 0–9</span>
+        </div>
+        <div class="fase-card-body">
+          <ul>
+            <li>~600m² operando: musculação + cardio + 1–2 estúdios</li>
+            <li>Recepção e lounge em padrão alto (primeira impressão)</li>
+            <li>Vestiários de bom padrão</li>
+            <li>Mix de marcas: topo de linha nas peças visíveis</li>
+            <li class="cut">Spa / área de estética completa</li>
+            <li class="cut">Coworking</li>
+          </ul>
+          <div class="fase-total"><span class="lbl">Investimento</span><span class="val">≈ R$ 1,74M – 2,05M</span></div>
+        </div>
+      </div>
+      <div class="fase-card f2">
+        <div class="fase-card-head">
+          <div>
+            <span class="label">Fase 2 — Expansão</span>
+            <h3>Spa + Coworking</h3>
+          </div>
+          <span class="when">Mês 8–14</span>
+        </div>
+        <div class="fase-card-body">
+          <ul>
+            <li>Construção e equipagem da área de spa/estética</li>
+            <li>Construção e mobiliário do coworking</li>
+            <li>Upgrade pontual de equipamentos conforme demanda real</li>
+            <li>Financiado por caixa operacional + eventual aporte menor</li>
+          </ul>
+          <div class="fase-total"><span class="lbl">Investimento</span><span class="val">≈ R$ 400k – 650k</span></div>
+        </div>
+      </div>
+    </div>
+
+    <h3 style="margin: 32px 0 14px;">Detalhamento — Fase 1 (R$ 2M)</h3>
+    <div class="table-card">
+      <table>
+        <thead><tr><th>Item</th><th class="num">Estimado</th></tr></thead>
+        <tbody>
+          <tr><td>Reforma (≈600m², acabamento alto, não "ultra luxo")</td><td class="num">R$ 800.000 – 950.000</td></tr>
+          <tr><td>Equipamentos (musculação + cardio + 1–2 estúdios)</td><td class="num">R$ 650.000 – 800.000</td></tr>
+          <tr><td>Licenciamento + jurídico + contábil</td><td class="num">R$ 80.000 – 150.000</td></tr>
+          <tr><td>Marketing de lançamento + branding</td><td class="num">R$ 60.000 – 100.000</td></tr>
+          <tr><td>Capital de giro (4–6 meses)</td><td class="num">R$ 150.000 – 250.000</td></tr>
+          <tr class="total"><td>Total Fase 1</td><td class="num">≈ R$ 1,74M – 2,05M</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p class="note">O posicionamento premium se mantém mesmo com a abertura parcial: comunique spa e coworking como "em construção / chegando em breve" — isso reforça a percepção de expansão e exclusividade, em vez de parecer um corte de escopo.</p>
+
+    <h3 style="margin: 32px 0 14px;">Alternativa: manter o espaço completo desde o dia 1</h3>
+    <p>Se for importante abrir com tudo funcionando — sem sensação de obra inacabada — o corte muda de área para <strong>padrão de acabamento e marca de equipamento</strong>: trocar 100% de marcas topo de linha (Technogym/Life Fitness) por um mix, mantendo padrão alto apenas nas áreas mais visíveis (recepção, musculação principal) e marcas nacionais boas no resto (cardio de fundo, estúdios). Isso pode reduzir o CAPEX de equipamento em R$ 300k–500k sem destruir a percepção de luxo, desde que o acabamento do espaço continue no nível alto — é isso que o olho percebe primeiro.</p>
   </section>
 
   <!-- CHECKLIST -->
