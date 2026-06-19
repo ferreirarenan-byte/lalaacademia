@@ -1,0 +1,461 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Roadmap — Clube de Wellness Premium do Lala | 900m² Vila Madalena/Perdizes</title>
+<style>
+  :root {
+    --bg: #0f0e0c;
+    --panel: #18160f;
+    --panel-2: #1f1d14;
+    --gold: #c9a35f;
+    --gold-light: #e3c98a;
+    --cream: #f3ede0;
+    --muted: #a89f8c;
+    --line: #332e22;
+    --green: #7fae6f;
+    --red: #c97d6f;
+    --amber: #d4a857;
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--cream);
+    font-family: 'Georgia', 'Times New Roman', serif;
+    line-height: 1.55;
+  }
+  .wrap { max-width: 1040px; margin: 0 auto; padding: 56px 28px 100px; }
+
+  header.hero {
+    text-align: center;
+    padding-bottom: 44px;
+    border-bottom: 1px solid var(--line);
+    margin-bottom: 48px;
+  }
+  .kicker {
+    font-family: Arial, Helvetica, sans-serif;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    font-size: 11px;
+    color: var(--gold);
+    margin-bottom: 18px;
+  }
+  h1 {
+    font-size: 38px;
+    margin: 0 0 14px;
+    font-weight: normal;
+    color: var(--gold-light);
+    letter-spacing: 0.5px;
+  }
+  .subtitle { color: var(--muted); font-size: 16px; max-width: 620px; margin: 0 auto; }
+  .meta-row {
+    display: flex; justify-content: center; gap: 36px; margin-top: 28px;
+    font-family: Arial, sans-serif; font-size: 12px; color: var(--muted);
+    text-transform: uppercase; letter-spacing: 1px;
+  }
+  .meta-row strong { color: var(--gold-light); display: block; font-size: 18px; font-family: Georgia, serif; letter-spacing: 0; margin-top: 4px; }
+
+  .disclaimer {
+    background: var(--panel-2);
+    border-left: 3px solid var(--amber);
+    padding: 16px 20px;
+    font-family: Arial, sans-serif;
+    font-size: 13px;
+    color: var(--muted);
+    margin-bottom: 56px;
+    border-radius: 0 4px 4px 0;
+  }
+  .disclaimer strong { color: var(--amber); }
+
+  section { margin-bottom: 64px; }
+  .section-label {
+    font-family: Arial, sans-serif;
+    font-size: 11px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 10px;
+  }
+  h2 {
+    font-size: 26px;
+    font-weight: normal;
+    color: var(--cream);
+    margin: 0 0 24px;
+    padding-bottom: 14px;
+    border-bottom: 1px solid var(--line);
+  }
+  h3 { color: var(--gold-light); font-size: 18px; font-weight: normal; margin: 0 0 8px; }
+  p { color: #d8d1c0; }
+
+  /* ROADMAP TIMELINE */
+  .timeline { position: relative; padding-left: 36px; }
+  .timeline::before {
+    content: ''; position: absolute; left: 9px; top: 6px; bottom: 6px;
+    width: 2px; background: linear-gradient(var(--gold), var(--line));
+  }
+  .phase { position: relative; margin-bottom: 36px; }
+  .phase::before {
+    content: ''; position: absolute; left: -36px; top: 4px;
+    width: 18px; height: 18px; border-radius: 50%;
+    background: var(--bg); border: 2px solid var(--gold);
+  }
+  .phase-head { display: flex; align-items: baseline; gap: 14px; flex-wrap: wrap; margin-bottom: 10px; }
+  .phase-num {
+    font-family: Arial, sans-serif; font-size: 11px; color: var(--bg);
+    background: var(--gold); padding: 3px 10px; border-radius: 12px; font-weight: bold;
+  }
+  .phase-time { font-family: Arial, sans-serif; font-size: 12px; color: var(--muted); }
+  .phase ul { margin: 10px 0 0; padding-left: 20px; color: #d8d1c0; }
+  .phase li { margin-bottom: 6px; }
+  .phase-card {
+    background: var(--panel); border: 1px solid var(--line); border-radius: 8px;
+    padding: 18px 22px;
+  }
+  .tag {
+    display: inline-block; font-family: Arial, sans-serif; font-size: 10px;
+    text-transform: uppercase; letter-spacing: 0.5px; padding: 2px 8px;
+    border-radius: 3px; margin-right: 6px; margin-top: 8px;
+  }
+  .tag-consult { background: rgba(201,163,95,0.15); color: var(--gold-light); border: 1px solid rgba(201,163,95,0.4); }
+  .tag-legal { background: rgba(201,125,111,0.15); color: var(--red); border: 1px solid rgba(201,125,111,0.4); }
+
+  /* COST TABLE */
+  table { width: 100%; border-collapse: collapse; font-family: Arial, sans-serif; font-size: 14px; }
+  th {
+    text-align: left; padding: 12px 14px; background: var(--panel-2);
+    color: var(--gold-light); font-weight: normal; text-transform: uppercase;
+    font-size: 11px; letter-spacing: 1px; border-bottom: 1px solid var(--gold);
+  }
+  td { padding: 13px 14px; border-bottom: 1px solid var(--line); color: #d8d1c0; }
+  tr:last-child td { border-bottom: none; }
+  td.num, th.num { text-align: right; font-variant-numeric: tabular-nums; }
+  tr.total td { color: var(--gold-light); font-weight: bold; border-top: 2px solid var(--gold); border-bottom: none; padding-top: 16px; }
+  .table-card { background: var(--panel); border: 1px solid var(--line); border-radius: 8px; padding: 4px 18px; margin-bottom: 18px; overflow-x: auto; }
+  .note { font-family: Arial, sans-serif; font-size: 12px; color: var(--muted); margin-top: 8px; }
+
+  /* SCENARIO CARDS */
+  .scenarios { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; margin-top: 18px; }
+  .scenario {
+    background: var(--panel); border: 1px solid var(--line); border-radius: 8px; padding: 22px;
+  }
+  .scenario.mid { border-color: var(--gold); background: var(--panel-2); }
+  .scenario-name { font-family: Arial, sans-serif; font-size: 11px; text-transform: uppercase; letter-spacing: 1px; color: var(--muted); }
+  .scenario-value { font-size: 30px; color: var(--gold-light); margin: 6px 0 14px; }
+  .scenario ul { list-style: none; padding: 0; margin: 0; font-family: Arial, sans-serif; font-size: 12.5px; color: #c5bda8; }
+  .scenario li { display: flex; justify-content: space-between; padding: 6px 0; border-bottom: 1px dashed var(--line); }
+  .scenario li:last-child { border: none; }
+
+  /* CHECKLIST */
+  .checklist-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+  .check-card { background: var(--panel); border: 1px solid var(--line); border-radius: 8px; padding: 18px 22px; }
+  .check-card h3 { font-size: 15px; margin-bottom: 12px; display: flex; align-items: center; gap: 8px; }
+  .check-card ul { margin: 0; padding-left: 18px; font-family: Arial, sans-serif; font-size: 13px; color: #c5bda8; }
+  .check-card li { margin-bottom: 7px; }
+
+  footer { text-align: center; padding-top: 40px; border-top: 1px solid var(--line); color: var(--muted); font-family: Arial, sans-serif; font-size: 12px; }
+
+  @media (max-width: 720px) {
+    .scenarios { grid-template-columns: 1fr; }
+    .checklist-grid { grid-template-columns: 1fr; }
+    .meta-row { gap: 18px; flex-wrap: wrap; }
+    h1 { font-size: 28px; }
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <header class="hero">
+    <div class="kicker">Plano de Implantação</div>
+    <h1>Clube de Wellness Premium do Lala</h1>
+    <p class="subtitle">Roadmap de viabilidade, custos estimados e etapas para um espaço de 900m² entre Vila Madalena e Perdizes — academia + estética + massagem + coworking</p>
+    <div class="meta-row">
+      <div>Área<strong>900 m²</strong></div>
+      <div>Investimento estimado<strong>R$ 2,3M – 4,2M</strong></div>
+      <div>Prazo até abertura<strong>8–12 meses</strong></div>
+    </div>
+  </header>
+
+  <div class="disclaimer">
+    <strong>Sobre estes números:</strong> são estimativas construídas a partir de benchmarks de mercado (construção civil para uso comercial, equipamentos fitness profissionais e referências do setor de academias boutique no Brasil). Não existe uma fonte única e auditável para "custo de academia de luxo por m²" — o mercado não publica isso de forma confiável. Use como ponto de partida para orçar com fornecedores reais (2–3 cotações por categoria) antes de comprometer capital.
+  </div>
+
+  <!-- ROADMAP -->
+  <section>
+    <div class="section-label">Roadmap</div>
+    <h2>Linha do tempo — da viabilidade à abertura</h2>
+    <div class="timeline">
+
+      <div class="phase">
+        <div class="phase-card">
+          <div class="phase-head">
+            <span class="phase-num">FASE 1</span>
+            <h3 style="margin:0;">Viabilidade e Conceito</h3>
+            <span class="phase-time">Mês 1–2</span>
+          </div>
+          <ul>
+            <li>Definir posicionamento e ticket médio alvo (ex: R$ 1.500–3.500/mês)</li>
+            <li>Pesquisa de demanda e benchmarking de concorrentes na região (SETT, Bio Ritmo Black, estúdios boutique)</li>
+            <li>Montar planilha de viabilidade: CAPEX, custo fixo, ponto de equilíbrio</li>
+            <li>Definir mix de receita (academia / estética / massagem / coworking — próprio ou parceria)</li>
+          </ul>
+          <span class="tag tag-consult">Consultor de viabilidade de negócios</span>
+          <span class="tag tag-consult">Pesquisa de mercado</span>
+        </div>
+      </div>
+
+      <div class="phase">
+        <div class="phase-card">
+          <div class="phase-head">
+            <span class="phase-num">FASE 2</span>
+            <h3 style="margin:0;">Projeto Arquitetônico e Engenharia</h3>
+            <span class="phase-time">Mês 2–4</span>
+          </div>
+          <ul>
+            <li>Vistoria técnica do terreno/edificação (estrutura, pé-direito, carga, drenagem)</li>
+            <li>Projeto de layout (zoneamento: musculação, cardio, estúdios, spa/estética, coworking, recepção)</li>
+            <li>Projetos complementares: elétrico, hidráulico, HVAC/climatização, acústico</li>
+            <li>Aprovação de projeto na Prefeitura</li>
+          </ul>
+          <span class="tag tag-consult">Arquiteto especializado em fitness/wellness</span>
+          <span class="tag tag-consult">Engenheiro estrutural</span>
+          <span class="tag tag-legal">Despachante/aprovação de projeto</span>
+        </div>
+      </div>
+
+      <div class="phase">
+        <div class="phase-card">
+          <div class="phase-head">
+            <span class="phase-num">FASE 3</span>
+            <h3 style="margin:0;">Estrutura Jurídica e Licenciamento</h3>
+            <span class="phase-time">Mês 2–6 (paralelo)</span>
+          </div>
+          <ul>
+            <li>Definir CNPJ e enquadramento tributário (atividades múltiplas no mesmo espaço)</li>
+            <li>Contratos com profissionais parceiros (esteticistas, massoterapeutas) — locação de sala x comissão x CLT</li>
+            <li>Alvará de funcionamento (Prefeitura)</li>
+            <li>AVCB — Corpo de Bombeiros (crítico para 900m²)</li>
+            <li>Licença da Vigilância Sanitária (obrigatória por causa de estética/massagem)</li>
+            <li>Termos de responsabilidade civil e seguro do espaço</li>
+          </ul>
+          <span class="tag tag-legal">Advogado empresarial</span>
+          <span class="tag tag-consult">Contador especializado</span>
+          <span class="tag tag-legal">Consultoria em licenciamento sanitário</span>
+        </div>
+      </div>
+
+      <div class="phase">
+        <div class="phase-card">
+          <div class="phase-head">
+            <span class="phase-num">FASE 4</span>
+            <h3 style="margin:0;">Obra e Reforma</h3>
+            <span class="phase-time">Mês 4–9</span>
+          </div>
+          <ul>
+            <li>Contratação da construtora/empreiteira (2–3 orçamentos)</li>
+            <li>Infraestrutura: elétrica reforçada, hidráulica (áreas úmidas: vestiário, spa), climatização</li>
+            <li>Acabamentos: piso técnico/emborrachado, espelhos, iluminação, isolamento acústico (estúdios)</li>
+            <li>Áreas específicas: vestiários premium, salas de estética/massagem, cabines, coworking</li>
+          </ul>
+          <span class="tag tag-consult">Gerente de obra / engenheiro residente</span>
+        </div>
+      </div>
+
+      <div class="phase">
+        <div class="phase-card">
+          <div class="phase-head">
+            <span class="phase-num">FASE 5</span>
+            <h3 style="margin:0;">Equipamentos e Fornecedores</h3>
+            <span class="phase-time">Mês 6–9 (paralelo à obra)</span>
+          </div>
+          <ul>
+            <li>Cotação com fabricantes premium: Technogym, Life Fitness, Matrix, Wellness</li>
+            <li>Equipamentos de musculação, cardio, pesos livres, estúdios (bike/funcional)</li>
+            <li>Equipamentos de estética e spa (camas de massagem, aparelhos estéticos)</li>
+            <li>Mobiliário de coworking, recepção, lounge</li>
+            <li>Negociar prazo de entrega (importados podem levar 60–120 dias)</li>
+          </ul>
+          <span class="tag tag-consult">Fornecedor/representante de equipamentos</span>
+        </div>
+      </div>
+
+      <div class="phase">
+        <div class="phase-card">
+          <div class="phase-head">
+            <span class="phase-num">FASE 6</span>
+            <h3 style="margin:0;">Equipe e Pré-operação</h3>
+            <span class="phase-time">Mês 8–10</span>
+          </div>
+          <ul>
+            <li>Contratação: professores CREF, recepção, limpeza, segurança, gestão</li>
+            <li>Parcerias com profissionais de estética/massagem (fechamento de contratos)</li>
+            <li>Sistema de gestão (CRM, controle de acesso, agendamento, financeiro)</li>
+            <li>Branding, identidade visual, fotos profissionais do espaço</li>
+          </ul>
+          <span class="tag tag-consult">Consultoria de RH/recrutamento fitness</span>
+          <span class="tag tag-consult">Agência de branding</span>
+        </div>
+      </div>
+
+      <div class="phase">
+        <div class="phase-card">
+          <div class="phase-head">
+            <span class="phase-num">FASE 7</span>
+            <h3 style="margin:0;">Pré-venda e Lançamento</h3>
+            <span class="phase-time">Mês 9–12</span>
+          </div>
+          <ul>
+            <li>Campanha de pré-venda de mensalidades fundadoras (gera caixa antes da abertura)</li>
+            <li>Marketing local (Vila Madalena/Perdizes), parcerias com empresas da região (planos corporativos)</li>
+            <li>Soft opening para early adopters / influenciadores locais</li>
+            <li>Abertura oficial</li>
+          </ul>
+          <span class="tag tag-consult">Consultoria de marketing/growth</span>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- CAPEX BREAKDOWN -->
+  <section>
+    <div class="section-label">Investimento Inicial (CAPEX)</div>
+    <h2>Estimativa de custos — base 900m²</h2>
+
+    <h3 style="margin-bottom:14px;">1. Reforma e Obra Civil</h3>
+    <div class="table-card">
+      <table>
+        <thead><tr><th>Item</th><th class="num">Faixa (R$/m²)</th><th class="num">Estimado (900m²)</th></tr></thead>
+        <tbody>
+          <tr><td>Reforma geral (padrão alto / acabamento premium)</td><td class="num">R$ 900 – 1.800</td><td class="num">R$ 810.000 – 1.620.000</td></tr>
+          <tr><td>Elétrica reforçada + climatização (HVAC)</td><td class="num">incluso acima</td><td class="num">R$ 150.000 – 280.000</td></tr>
+          <tr><td>Hidráulica (vestiários, spa, áreas úmidas)</td><td class="num">incluso acima</td><td class="num">R$ 90.000 – 160.000</td></tr>
+          <tr><td>Piso técnico/emborrachado + isolamento acústico</td><td class="num">R$ 150 – 280</td><td class="num">R$ 135.000 – 252.000</td></tr>
+          <tr><td>Projeto arquitetônico + aprovações</td><td class="num">—</td><td class="num">R$ 60.000 – 120.000</td></tr>
+          <tr class="total"><td>Subtotal Reforma</td><td></td><td class="num">≈ R$ 1.245.000 – 2.432.000</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p class="note">Faixa mais alta que academia padrão por causa de acabamento de luxo, áreas de estética/massagem (que exigem hidráulica e revestimento específico) e isolamento acústico para estúdios e coworking.</p>
+
+    <h3 style="margin: 28px 0 14px;">2. Equipamentos e Mobiliário</h3>
+    <div class="table-card">
+      <table>
+        <thead><tr><th>Item</th><th class="num">Estimado</th></tr></thead>
+        <tbody>
+          <tr><td>Musculação + pesos livres (marca premium: Technogym/Life Fitness/Matrix)</td><td class="num">R$ 450.000 – 750.000</td></tr>
+          <tr><td>Cardio (esteiras, bikes, elípticos — linha alta)</td><td class="num">R$ 200.000 – 380.000</td></tr>
+          <tr><td>Estúdios (bike indoor, funcional, yoga/pilates)</td><td class="num">R$ 100.000 – 180.000</td></tr>
+          <tr><td>Equipamentos de estética e spa (camas, aparelhos)</td><td class="num">R$ 80.000 – 180.000</td></tr>
+          <tr><td>Mobiliário coworking + lounge + recepção</td><td class="num">R$ 120.000 – 250.000</td></tr>
+          <tr><td>Frete, instalação e montagem (5–10%)</td><td class="num">R$ 50.000 – 120.000</td></tr>
+          <tr class="total"><td>Subtotal Equipamentos</td><td class="num">≈ R$ 1.000.000 – 1.860.000</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <h3 style="margin: 28px 0 14px;">3. Licenciamento, Jurídico e Pré-operação</h3>
+    <div class="table-card">
+      <table>
+        <thead><tr><th>Item</th><th class="num">Estimado</th></tr></thead>
+        <tbody>
+          <tr><td>Abertura de empresa + contábil inicial</td><td class="num">R$ 5.000 – 15.000</td></tr>
+          <tr><td>Alvará, AVCB, Vigilância Sanitária</td><td class="num">R$ 10.000 – 30.000</td></tr>
+          <tr><td>Assessoria jurídica (contratos, compliance)</td><td class="num">R$ 30.000 – 80.000</td></tr>
+          <tr><td>Branding e identidade visual</td><td class="num">R$ 40.000 – 100.000</td></tr>
+          <tr><td>Marketing de pré-lançamento</td><td class="num">R$ 50.000 – 150.000</td></tr>
+          <tr><td>Capital de giro (3–6 meses de operação)</td><td class="num">R$ 250.000 – 600.000</td></tr>
+          <tr class="total"><td>Subtotal Licenciamento + Pré-operação</td><td class="num">≈ R$ 385.000 – 975.000</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <!-- SCENARIOS -->
+  <section>
+    <div class="section-label">Cenários de Investimento</div>
+    <h2>Total estimado por nível de padrão</h2>
+    <div class="scenarios">
+      <div class="scenario">
+        <div class="scenario-name">Conservador</div>
+        <div class="scenario-value">R$ 2,3M</div>
+        <ul>
+          <li><span>Reforma</span><span>R$ 1,25M</span></li>
+          <li><span>Equipamentos</span><span>R$ 1,0M</span></li>
+          <li><span>Licenc./pré-op.</span><span>R$ 385k</span></li>
+        </ul>
+      </div>
+      <div class="scenario mid">
+        <div class="scenario-name">Intermediário (recomendado)</div>
+        <div class="scenario-value">R$ 3,2M</div>
+        <ul>
+          <li><span>Reforma</span><span>R$ 1,7M</span></li>
+          <li><span>Equipamentos</span><span>R$ 1,3M</span></li>
+          <li><span>Licenc./pré-op.</span><span>R$ 600k</span></li>
+        </ul>
+      </div>
+      <div class="scenario">
+        <div class="scenario-name">Alto Padrão</div>
+        <div class="scenario-value">R$ 4,2M</div>
+        <ul>
+          <li><span>Reforma</span><span>R$ 2,4M</span></li>
+          <li><span>Equipamentos</span><span>R$ 1,8M</span></li>
+          <li><span>Licenc./pré-op.</span><span>R$ 975k</span></li>
+        </ul>
+      </div>
+    </div>
+    <p class="note" style="margin-top:18px;">Como o terreno já é seu, este investimento é só CAPEX de implantação (sem custo de aquisição/aluguel de imóvel) — isso melhora muito o retorno comparado a um concorrente que precisa alugar 900m² numa região nobre.</p>
+  </section>
+
+  <!-- CHECKLIST -->
+  <section>
+    <div class="section-label">Por Onde Começar</div>
+    <h2>Checklist imediato</h2>
+    <div class="checklist-grid">
+      <div class="check-card">
+        <h3>🔑 Próximos 30 dias</h3>
+        <ul>
+          <li>Fechar planilha de viabilidade (ticket médio × nº de membros × break-even)</li>
+          <li>Visitar 2–3 academias boutique de SP como cliente oculto (SETT, Bio Ritmo Black)</li>
+          <li>Contratar engenheiro para vistoria técnica do terreno</li>
+          <li>Primeira reunião com contador especializado em academias</li>
+        </ul>
+      </div>
+      <div class="check-card">
+        <h3>📋 Consultorias prioritárias</h3>
+        <ul>
+          <li>Arquiteto com portfólio em fitness/wellness (não genérico)</li>
+          <li>Advogado empresarial (contratos com parceiros de estética/massagem)</li>
+          <li>Contador especializado em academias/franquias</li>
+          <li>Consultoria de licenciamento sanitário (ponto mais sensível do projeto)</li>
+        </ul>
+      </div>
+      <div class="check-card">
+        <h3>⚠️ Riscos a mapear cedo</h3>
+        <ul>
+          <li>Capacidade estrutural do terreno para cargas de equipamento pesado</li>
+          <li>Vizinhança/zoneamento — restrições de ruído e horário de funcionamento</li>
+          <li>Tempo de aprovação de projeto na Prefeitura (pode atrasar tudo)</li>
+          <li>Modelo de parceria com profissionais de estética (CLT x aluguel de sala x comissão muda toda a estrutura fiscal)</li>
+        </ul>
+      </div>
+      <div class="check-card">
+        <h3>💰 Estratégia de caixa</h3>
+        <ul>
+          <li>Avaliar pré-venda de planos fundadores antes da obra terminar</li>
+          <li>Avaliar parcerias B2B (empresas da região) como receita antecipada</li>
+          <li>Faseamento da obra (abrir parte do espaço antes do projeto 100% pronto)</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    Estimativas baseadas em benchmarks de construção civil comercial e equipamentos fitness profissionais — São Paulo, 2026. Valide com orçamentos reais antes de qualquer decisão de investimento.
+  </footer>
+
+</div>
+</body>
+</html>
